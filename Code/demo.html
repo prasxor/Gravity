@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <h1>Student Information Form</h1>
+    <form id="studentForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <!-- Add more form fields as needed -->
+
+        <button type="button" onclick="composeEmail()">Compose Email</button>
+    </form>
+
+    <script>
+        function composeEmail() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            // Get more form field values as needed
+
+            const subject = encodeURIComponent("New Form Submission");
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n`);
+            // Add more form field values to the body as needed
+
+            const mailtoLink = `mailto:prasxorkumar@gmail.com?subject=${subject}&body=${body}`;
+
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+
+</html>
